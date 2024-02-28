@@ -1,0 +1,35 @@
+type Query_1{
+    getTradeByCriteria(searchBuilder:[SearchCriteria]):[PhysicalTrade]
+    getTradeById(id:String):PhysicalTrade
+}
+
+type PhysicalTrade{
+    tradeId:String
+    tradeDateTime:String
+    tradeTransactionType:String
+    isInternalTrade:String
+    company:String
+    counterparty:String
+    profitcenter:String
+    internalProfitCenter:String
+    companyCode:String
+    counterpartyCode:String
+    profitcenterCode:String
+    internalProfitcenterCode:String
+    traderName:String
+    broker:String
+    brokerReference:String
+    externalReference:String
+    paperTrade:String
+    commodity:String
+    commodityCode:String
+    origin:String
+    brand:String
+}
+
+input SearchCriteria{
+    fieldName:String
+    operation:String
+    value: String
+    valueList:[String]
+}
