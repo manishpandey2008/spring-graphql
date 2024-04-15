@@ -39,23 +39,23 @@ public class DoFilter {
                     } else if (fieldClass.getOperation().equalsIgnoreCase("contains")) {
                         predicates.add(criteriaBuilder.like(path, "%" + value + "%"));
                     } else if (fieldClass.getOperation().equalsIgnoreCase("in")) {
-                        if (fieldClass.getValue() != null) {
-                            List<?> list = new ArrayList<>((Collection<?>) fieldClass.getValueList());
-                            if (list.size() > 0) {
-                                Expression<String> exp = path;
-                                Predicate predicate = exp.in(list);
-                                predicates.add(predicate);
-                            }
-                        }
+//                        if (fieldClass.getValue() != null) {
+//                            List<?> list = new ArrayList<>((Collection<?>) fieldClass.getValueList());
+//                            if (list.size() > 0) {
+//                                Expression<String> exp = path;
+//                                Predicate predicate = exp.in(list);
+//                                predicates.add(predicate);
+//                            }
+//                        }
                     }  else if (fieldClass.getOperation().equalsIgnoreCase("inDates")) {
-                        if (fieldClass.getValue() != null) {
-                            List<?> list = new ArrayList<>((Collection<?>) fieldClass.getValueList());
-                            if (list.size() > 0) {
-                                Expression<String> exp = path.as(LocalDateTime.class);
-                                Predicate predicate = exp.in(list);
-                                predicates.add(predicate);
-                            }
-                        }
+//                        if (fieldClass.getValue() != null) {
+//                            List<?> list = new ArrayList<>((Collection<?>) fieldClass.getValueList());
+//                            if (list.size() > 0) {
+//                                Expression<String> exp = path.as(LocalDateTime.class);
+//                                Predicate predicate = exp.in(list);
+//                                predicates.add(predicate);
+//                            }
+//                        }
                     }
                 }
             }

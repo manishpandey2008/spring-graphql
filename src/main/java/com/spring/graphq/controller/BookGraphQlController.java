@@ -3,16 +3,18 @@ package com.spring.graphq.controller;
 import com.spring.graphq.CustomException;
 import com.spring.graphq.filter.SearchCriteria;
 import com.spring.graphq.model.Book;
+import com.spring.graphq.model.BookInput;
 import com.spring.graphq.service.BookService;
 import jakarta.servlet.annotation.WebServlet;
 import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
 @Controller
-@WebServlet(urlPatterns = "/graphql-1")
+//@WebServlet(urlPatterns = "/graphql-1")
 public class BookGraphQlController {
 
     private final BookService bookService;
@@ -32,7 +34,13 @@ public class BookGraphQlController {
     }
 
     @QueryMapping("createBook")
-    public Book createBook(@Argument Book book){
+    public Book createBook(@Argument BookInput bookInput){
+        Book book=new Book();
+        book.setId(book.getId());
+        book.setPage(bookInput.getPage());
+        book.setDesc(bookInput.getDesc());
+        book.setPrice(bookInput.getPrice());
+        book.setAuthor(bookInput.getAuthor());
         return bookService.create(book);
     }
 

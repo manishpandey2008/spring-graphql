@@ -1,4 +1,8 @@
-type Query{
+type Mutation{
+    createBook(book:BookInput):Book
+}
+
+type Query_1{
     allBooks:[Book]
     getBook(bookId:Int):Book
     getBookByCriteria(searchBuilder:[SearchCriteria]):[Book]

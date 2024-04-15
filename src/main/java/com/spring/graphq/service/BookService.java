@@ -2,6 +2,7 @@ package com.spring.graphq.service;
 
 import com.spring.graphq.filter.SearchCriteria;
 import com.spring.graphq.model.Book;
+import com.spring.graphq.model.BookInput;
 
 import java.util.List;
 

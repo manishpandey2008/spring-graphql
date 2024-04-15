@@ -6,6 +6,7 @@ import com.spring.graphq.model.Book;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
@@ -25,6 +26,6 @@ public class TradeGraphQlController {
 
     @QueryMapping("getTradeByCriteria")
     public List<PhysicalTrade> getAllBook(@Argument List<SearchCriteria> searchBuilder){
-        return tradeService.getInventoryByCriteria(searchBuilder);
+        return tradeService.getInventoryByCriteriaGraphQl(searchBuilder);
     }
 }

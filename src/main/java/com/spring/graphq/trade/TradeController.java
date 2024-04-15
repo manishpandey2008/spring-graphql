@@ -1,5 +1,7 @@
 package com.spring.graphq.trade;
 
+import com.spring.graphq.filter.SearchCriteria;
+import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,6 +30,12 @@ public class TradeController {
     @GetMapping("/by-id")
     public PhysicalTrade getTradeById(@RequestParam String id){
         return tradeService.getTradeListById(id);
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/get-trade-by-criteria")
+    public List<Object> getAllBook(@RequestBody List<SearchCriteria> searchBuilder,@RequestParam("fieldName") String fieldName){
+        return tradeService.getInventoryByCriteria(searchBuilder,fieldName);
     }
 
 }

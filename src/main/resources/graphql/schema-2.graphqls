@@ -1,4 +1,4 @@
-type Query_1{
+type Query{
     getTradeByCriteria(searchBuilder:[SearchCriteria]):[PhysicalTrade]
     getTradeById(id:String):PhysicalTrade
 }
