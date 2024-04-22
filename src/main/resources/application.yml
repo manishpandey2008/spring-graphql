@@ -3,29 +3,29 @@ server:
   servlet:
     context-path: /api-ctrm
 
-spring:
-  main:
-    allow-bean-definition-overriding: true
-  datasource:
-    url: jdbc:postgresql://${DB_HOST}:${DB_PORT:5432}/${DB_NAME}?currentSchema=${DB_SCHEMA:taomish}
-    hostname: ${DB_HOST}
-    databasename: ${DB_NAME}
-    #port: ${DB_PORT}
-    username: ${DB_USER}
-    password: ${DB_PASSWORD}
-    driver-class-name: org.postgresql.Driver
-    type: com.zaxxer.hikari.HikariDataSource
-    hikari:
-      auto-commit: true
-      maximum-pool-size: 50
-  jpa:
-    hibernate:
-      ddl-auto: none
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    generate-ddl: false
-    show-sql: false
-  graphql:
-    cors:
-      allow-credentials: true
-      allowed-origins:
-        - http://localhost:4200
+#spring:
+#  main:
+#    allow-bean-definition-overriding: true
+#  datasource:
+#    url: jdbc:postgresql://${DB_HOST}:${DB_PORT:5432}/${DB_NAME}?currentSchema=${DB_SCHEMA:taomish}
+#    hostname: ${DB_HOST}
+#    databasename: ${DB_NAME}
+#    #port: ${DB_PORT}
+#    username: ${DB_USER}
+#    password: ${DB_PASSWORD}
+#    driver-class-name: org.postgresql.Driver
+#    type: com.zaxxer.hikari.HikariDataSource
+#    hikari:
+#      auto-commit: true
+#      maximum-pool-size: 50
+#  jpa:
+#    hibernate:
+#      ddl-auto: none
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    generate-ddl: false
+#    show-sql: false
+#  graphql:
+#    cors:
+#      allow-credentials: true
+#      allowed-origins:
+#        - http://localhost:4200

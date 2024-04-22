@@ -38,4 +38,13 @@ public class TradeController {
         return tradeService.getInventoryByCriteria(searchBuilder,fieldName);
     }
 
+    @CrossOrigin(origins = "*")
+    @PostMapping("/get-item-list")
+    public List<Object> getIds(@RequestBody List<SearchCriteria> searchBuilder,@RequestParam("fieldName") String fieldName){
+        return tradeService.getListByFieldName(searchBuilder,fieldName);
+    }
+
+
+
+
 }
