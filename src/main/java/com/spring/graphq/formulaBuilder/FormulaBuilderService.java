@@ -48,8 +48,9 @@ public class FormulaBuilderService {
         return fieldNames;
     }
 
+
     public Double caluculation(String expression){
-        expression = expression.replaceAll("\\s+", "");
+//        expression = expression.replaceAll("\\s+", "");
         return evaluateExpression(expression);
     }
 
